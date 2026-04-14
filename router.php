@@ -1,26 +1,23 @@
 <?php
-// Router for PHP built-in server
+// Simple router for PHP built-in server
 $uri = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 
-// Serve static files directly
-if ($uri !== '/' && file_exists(__DIR__ . $uri)) {
+// If it's a file that exists and not a PHP file, serve it directly
+if ($uri !== '/' && file_exists(__DIR__ . $uri) && !preg_match('/\.php$/', $uri)) {
     return false;
 }
 
-// Route to index.php for root
+// If it's root, serve index.php
 if ($uri === '/') {
-    require_once __DIR__ . '/index.php';
-    return true;
+    require __DIR__ . '/index.php';
+    exit;
 }
 
-// Try to serve the requested PHP file
-$file = __DIR__ . $uri;
-if (file_exists($file) && pathinfo($file, PATHINFO_EXTENSION) === 'php') {
-    require_once $file;
-    return true;
+// If it's a PHP file, serve it
+if (preg_match('/\.php$/', $uri) && file_exists(__DIR__ . $uri)) {
+    require __DIR__ . $uri;
+    exit;
 }
 
-// 404
-http_response_code(404);
-echo '404 Not Found';
-return true;
+// Otherwise let the server handle it
+return false;
