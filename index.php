@@ -23,7 +23,7 @@
             <div class="hero-content">
                 <h1 class="fade-in">Donation Website</h1>
                 <p class="fade-in">This website serves as a demo testing for paypal & stripe integration</p>
-                <a href="donate.php" class="cta-button">Donate</a>
+                <a href="donate.php" class="cta-button" id="donate-btn">Donate</a>
             </div>
         </main>
 
