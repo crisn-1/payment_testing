@@ -1,0 +1,305 @@
+.donate-main {
+    flex: 1;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/pexels-rdne-6646774.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 3rem 2rem;
+}
+
+.donate-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.donate-container h1 {
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+    text-align: center;
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.developer-credit {
+    text-align: center;
+    color: white;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+    opacity: 0.9;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.donation-form {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.amount-section,
+.payment-method-section,
+.donor-info-section {
+    margin-bottom: 2rem;
+}
+
+.amount-section h3,
+.payment-method-section h3,
+.donor-info-section h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.amount-options {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.amount-btn {
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    background: white;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.amount-btn:hover {
+    border-color: #667eea;
+    color: #667eea;
+}
+
+.amount-btn.active {
+    background: #667eea;
+    border-color: #667eea;
+    color: white;
+}
+
+.custom-amount {
+    margin-top: 1rem;
+}
+
+.custom-amount label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.custom-amount input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.custom-amount input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    user-select: none;
+}
+
+.payment-option:hover {
+    border-color: #667eea;
+    background: #f8f9ff;
+}
+
+.payment-option.selected {
+    border-color: #667eea;
+    background: #f0f3ff;
+}
+
+.payment-option.active {
+    border-color: #667eea;
+    background: #f0f3ff;
+}
+
+.payment-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-right: 1rem;
+    pointer-events: none;
+}
+
+.payment-icon svg {
+    width: 30px;
+    height: 30px;
+}
+
+.paypal-icon {
+    background: #fff8e1;
+    color: #003087;
+}
+
+.stripe-icon {
+    background: #e8f4fd;
+    color: #635bff;
+}
+
+.payment-info {
+    flex: 1;
+    pointer-events: none;
+}
+
+.payment-info h4 {
+    margin: 0 0 0.25rem 0;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.payment-info p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.payment-radio input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.donate-btn {
+    width: 100%;
+    padding: 1rem;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.donate-btn:hover:not(:disabled) {
+    background: #5568d3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.donate-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.secure-note {
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+#stripe-card-section {
+    margin-bottom: 2rem;
+}
+
+#stripe-card-section h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.stripe-element {
+    padding: 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background: white;
+    transition: border-color 0.3s;
+}
+
+.stripe-element.StripeElement--focus {
+    border-color: #667eea;
+}
+
+.stripe-element.StripeElement--invalid {
+    border-color: #e74c3c;
+}
+
+#card-errors {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    min-height: 20px;
+}
+
+#paypal-button-section {
+    margin-bottom: 2rem;
+}
+
+#paypal-button-section h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+#paypal-button-container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .amount-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .donate-container h1 {
+        font-size: 2rem;
+    }
+}
