@@ -218,7 +218,24 @@ if (!STRIPE_PUBLISHABLE_KEY || !PAYPAL_CLIENT_ID) {
                     body: JSON.stringify({ amount: selectedAmount })
                 });
 
-                const data = await response.json();
+                // Check if response is ok
+                if (!response.ok) {
+                    const text = await response.text();
+                    console.error('Server response:', text);
+                    throw new Error('Server error: ' + response.status);
+                }
+
+                // Try to parse JSON
+                const text = await response.text();
+                console.log('Server response:', text);
+                
+                let data;
+                try {
+                    data = JSON.parse(text);
+                } catch (e) {
+                    console.error('Failed to parse JSON:', text);
+                    throw new Error('Invalid server response. Check console for details.');
+                }
 
                 if (data.error) {
                     throw new Error(data.error);
@@ -236,6 +253,7 @@ if (!STRIPE_PUBLISHABLE_KEY || !PAYPAL_CLIENT_ID) {
                     window.location.href = 'success.php?amount=' + selectedAmount + '&method=stripe';
                 }
             } catch (error) {
+                console.error('Payment error:', error);
                 document.getElementById('card-errors').textContent = error.message;
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Donate Now';
