@@ -60,9 +60,7 @@ if (!STRIPE_PUBLISHABLE_KEY || !PAYPAL_CLIENT_ID) {
                         <div class="payment-options">
                             <div class="payment-option" data-method="stripe">
                                 <div class="payment-icon stripe-icon">
-                                    <svg viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.591-7.305z"/>
-                                    </svg>
+                                    <img src="https://cdn-icons-png.flaticon.com/512/349/349221.png" alt="Stripe" style="width: 48px; height: 48px;">
                                 </div>
                                 <div class="payment-info">
                                     <h4>Credit/Debit Card</h4>
@@ -75,10 +73,7 @@ if (!STRIPE_PUBLISHABLE_KEY || !PAYPAL_CLIENT_ID) {
 
                             <div class="payment-option" data-method="paypal">
                                 <div class="payment-icon paypal-icon">
-                                    <svg viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M20.067 8.478c.492.88.556 2.014.3 3.327-.74 3.806-3.276 5.12-6.514 5.12h-.5a.805.805 0 00-.794.68l-.04.22-.63 3.993-.028.15a.805.805 0 01-.793.679H7.72a.483.483 0 01-.477-.558L7.418 21h1.518l.95-6.02h1.385c4.678 0 7.75-2.203 8.796-6.502z"/>
-                                        <path d="M2.379 0C1.94 0 1.6.358 1.549.793L.051 11.637a.668.668 0 00.66.764h4.145l1.04-6.58L5.85 6.4h2.695c4.011 0 6.753-1.528 7.572-4.72C16.595.56 15.395 0 13.878 0H2.379z"/>
-                                    </svg>
+                                    <img src="https://cdn-icons-png.flaticon.com/512/174/174861.png" alt="PayPal" style="width: 48px; height: 48px;">
                                 </div>
                                 <div class="payment-info">
                                     <h4>PayPal</h4>
