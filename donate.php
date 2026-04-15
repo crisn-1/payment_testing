@@ -1,5 +1,12 @@
 <?php
 require_once 'config.php';
+
+// Debug: Check if environment variables are loaded
+if (!STRIPE_PUBLISHABLE_KEY || !PAYPAL_CLIENT_ID) {
+    error_log("WARNING: API keys not loaded from environment variables");
+    error_log("STRIPE_PUBLISHABLE_KEY: " . (STRIPE_PUBLISHABLE_KEY ? "SET" : "EMPTY"));
+    error_log("PAYPAL_CLIENT_ID: " . (PAYPAL_CLIENT_ID ? "SET" : "EMPTY"));
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -113,7 +120,14 @@ require_once 'config.php';
     </div>
 
     <script>
-        const stripe = Stripe('<?php echo STRIPE_PUBLISHABLE_KEY; ?>');
+        // Check if Stripe key is loaded
+        const stripeKey = '<?php echo STRIPE_PUBLISHABLE_KEY; ?>';
+        if (!stripeKey || stripeKey === '') {
+            console.error('STRIPE_PUBLISHABLE_KEY is not set. Please check your environment variables in Railway.');
+            alert('Payment system configuration error. Please contact the administrator.');
+        }
+        
+        const stripe = Stripe(stripeKey);
         const elements = stripe.elements();
         const cardElement = elements.create('card');
         cardElement.mount('#card-element');
