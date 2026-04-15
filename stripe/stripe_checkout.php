@@ -35,7 +35,7 @@ try {
         ]],
         'mode' => 'payment',
         'success_url' => (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]/success.php?session_id={CHECKOUT_SESSION_ID}",
-        'cancel_url' => (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]/donate.php",
+        'cancel_url' => (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]/nonprofit-demopage/donate.php",
         'customer_email' => $donorEmail ?: null,
         'metadata' => [
             'donor_name' => $donorName,
