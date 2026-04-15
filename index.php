@@ -14,7 +14,7 @@
                 <ul class="nav-links">
                     <li><a href="index.php">Home</a></li>
                     <li><a href="documentation.php">Documentation</a></li>
-                    <li><a href="nonprofit-demopage/donate.php">Donate</a></li>
+                    <li><a href="donate.php">Donate</a></li>
                 </ul>
             </nav>
         </header>
@@ -23,7 +23,7 @@
             <div class="hero-content">
                 <h1 class="fade-in">Donation Website</h1>
                 <p class="fade-in">This website serves as a demo testing for paypal & stripe integration</p>
-                <a href="nonprofit-demopage/donate.php" class="cta-button" id="donate-btn">Donate</a>
+                <a href="donate.php" class="cta-button" id="donate-btn">Donate</a>
             </div>
         </main>
 

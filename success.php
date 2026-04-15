@@ -73,7 +73,7 @@
                 <ul class="nav-links">
                     <li><a href="index.php">Home</a></li>
                     <li><a href="documentation.php">Documentation</a></li>
-                    <li><a href="nonprofit-demopage/donate.php">Donate</a></li>
+                    <li><a href="donate.php">Donate</a></li>
                 </ul>
             </nav>
         </header>

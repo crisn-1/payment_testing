@@ -1,5 +1,5 @@
 <?php
-require_once '../config.php';
+require_once 'config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,8 +7,8 @@ require_once '../config.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Make a Donation</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/donate.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/donate.css">
     <script src="https://js.stripe.com/v3/"></script>
     <script src="https://www.paypal.com/sdk/js?client-id=<?php echo PAYPAL_CLIENT_ID; ?>&currency=USD"></script>
 </head>
@@ -18,8 +18,8 @@ require_once '../config.php';
             <nav>
                 <div class="logo">Paypal & Stripe Demo Integration</div>
                 <ul class="nav-links">
-                    <li><a href="../index.php">Home</a></li>
-                    <li><a href="../documentation.php">Documentation</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="documentation.php">Documentation</a></li>
                     <li><a href="donate.php">Donate</a></li>
                 </ul>
             </nav>
@@ -198,7 +198,7 @@ require_once '../config.php';
             submitBtn.textContent = 'Processing...';
 
             try {
-                const response = await fetch('../stripe/stripe_payment.php', {
+                const response = await fetch('stripe/stripe_payment.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ amount: selectedAmount })
@@ -219,7 +219,7 @@ require_once '../config.php';
                     submitBtn.disabled = false;
                     submitBtn.textContent = 'Donate Now';
                 } else {
-                    window.location.href = '../success.php?amount=' + selectedAmount + '&method=stripe';
+                    window.location.href = 'success.php?amount=' + selectedAmount + '&method=stripe';
                 }
             } catch (error) {
                 document.getElementById('card-errors').textContent = error.message;
@@ -247,7 +247,7 @@ require_once '../config.php';
                 },
                 onApprove: function(data, actions) {
                     return actions.order.capture().then(function(details) {
-                        window.location.href = '../success.php?amount=' + selectedAmount + '&method=paypal&transaction=' + details.id;
+                        window.location.href = 'success.php?amount=' + selectedAmount + '&method=paypal&transaction=' + details.id;
                     });
                 },
                 onError: function(err) {
